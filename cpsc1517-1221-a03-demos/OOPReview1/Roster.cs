@@ -48,7 +48,7 @@ namespace OOPReview1
         {
             No = no;
             Name = name;
-            Position = Position;
+            Position = position;
         }
 
         // override the ToString to return the No,Name,Position
