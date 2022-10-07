@@ -67,3 +67,9 @@ double sumOfAllNintendoGaemes = games
     .Where(item => item.Platform == "Nintendo")
     .Sum(item => item.Price);
 
+// Any games less than $20?
+bool isAnyGamesLessThan20 = games.Any(item => item.Price < 20);
+// All games less than $50
+bool isAllGamesLessThan50 = games.All(item => item.Price < 50);
+// No PC Games on sales?
+bool isNoPcGamesOnSales = !games.Any(item => item.Platform == "PC Games");
