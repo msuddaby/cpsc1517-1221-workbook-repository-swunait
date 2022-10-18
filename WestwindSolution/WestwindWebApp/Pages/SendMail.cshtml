@@ -2,3 +2,71 @@
 @model WestwindWebApp.Pages.SendMailModel
 @{
 }
+<h1>Email Client App</h1>
+
+@Html.Raw(Model.FeedbackMessage)
+
+<form method="post">
+   @* <div class="mb-3">
+        <label asp-for="MailUsername"
+               class="form-label" >
+               Gmail Email address
+        </label>
+        <input asp-for="MailUsername" 
+            type="email" 
+            class="form-control"  
+            required
+            >
+    </div>
+    <div class="mb-3">
+        <label asp-for="MailAppPassword" 
+                class="form-label">
+                Gmail App Password
+        </label>
+        <input asp-for="MailAppPassword" 
+            type="password" 
+            required
+            class="form-control">
+    </div>*@
+    <div class="mb-3">
+        <label asp-for="MailToAddress"
+               class="form-label">
+            Mail To Email address
+        </label>
+        <input asp-for="MailToAddress"
+               type="email"
+               class="form-control"
+               required>
+    </div>
+    <div class="mb-3">
+        <label asp-for="MailSubject"
+               class="form-label">
+           Subject
+        </label>
+        <input asp-for="MailSubject"
+               class="form-control"
+               required>
+    </div>
+    <div class="mb-3">
+        <label asp-for="MailMessage"
+               class="form-label">
+            Message
+        </label>
+        <textarea asp-for="MailMessage"
+            rows="10"
+            cols="50"
+            class="form-control"
+            required>
+        </textarea>
+    </div>
+    <button type="submit" 
+        asp-page-handler="SendMail"
+        class="btn btn-primary">
+        Send Mail
+    </button>
+    <button type="submit" 
+        asp-page-handler="ClearForm"
+        class="btn btn-secondary">
+        Clear
+    </button>
+</form>
