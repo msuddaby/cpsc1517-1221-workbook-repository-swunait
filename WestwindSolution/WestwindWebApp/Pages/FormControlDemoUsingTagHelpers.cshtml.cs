@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WestwindWebApp.Pages
 {
@@ -27,6 +28,15 @@ namespace WestwindWebApp.Pages
         public bool Subscribe { get; set; }
 
         public string[] GenderOptions { get; } = {"Male", "Female", "Unspecified" };
+
+        public SelectListItem[] DepartmentListItems =  
+        { 
+            new SelectListItem { Value = "DMIT", Text = "Digital Media and IT"},
+            new SelectListItem { Value = "BAIST", Text = "Bachelor of Applied Information Systems Technolog"},
+            new SelectListItem { Value = "CNT", Text = "Computer Network Technology"},
+            new SelectListItem { Value = "CET", Text = "Computer Engineering Technology"},
+
+        };
 
         public void OnGet()
         {
