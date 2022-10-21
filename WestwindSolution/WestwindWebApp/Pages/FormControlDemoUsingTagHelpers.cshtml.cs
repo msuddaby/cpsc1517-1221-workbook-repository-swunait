@@ -26,6 +26,8 @@ namespace WestwindWebApp.Pages
         [BindProperty]
         public bool Subscribe { get; set; }
 
+        public string[] GenderOptions { get; } = {"Male", "Female", "Unspecified" };
+
         public void OnGet()
         {
         }

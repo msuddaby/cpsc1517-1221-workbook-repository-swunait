@@ -22,26 +22,42 @@
                />
     </div>
 
-    <div class="form-check">
-        <input class="form-check-input" type="radio" 
-            asp-for="Gender" value="Male">
-        <label class="form-check-label" asp-for="Gender">
-            Male
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" 
-            asp-for="Gender" value="Female" checked>
-        <label class="form-check-label" asp-for="Gender">
-            Female
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio"
-               asp-for="Gender" value="Unknown">
-        <label class="form-check-label" asp-for="Gender">
-            Unknown
-        </label>
+    <div class="btn-group" role="group">
+        Gender:
+        @foreach(var currentGender in Model.GenderOptions) 
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="radio" 
+                    asp-for="Gender"
+                    id="Gender@(currentGender)"
+                    value="@currentGender">
+                <label class="form-check-label" asp-for="Gender">
+                    @currentGender
+                </label>
+            </div>
+        }
+        @*<div class="form-check">
+            <input class="form-check-input" type="radio" 
+                asp-for="Gender" value="Male">
+            <label class="form-check-label" asp-for="Gender">
+                Male
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" 
+                asp-for="Gender" value="Female" checked>
+            <label class="form-check-label" asp-for="Gender">
+                Female
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio"
+                   asp-for="Gender" value="Unspecified">
+            <label class="form-check-label" asp-for="Gender">
+                Unspecified
+            </label>
+        </div>*@
+
     </div>
 
     <label asp-for="Department">Department</label>
