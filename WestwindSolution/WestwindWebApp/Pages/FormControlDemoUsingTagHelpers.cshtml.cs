@@ -7,22 +7,22 @@ namespace WestwindWebApp.Pages
     public class FormControlDemoUsingTagHelpersModel : PageModel
     {
         [TempData]
-        public string FeedbackMessage { get; set; }
+        public string FeedbackMessage { get; set; } = string.Empty;
 
         [BindProperty]
-        public string Username { get; set; }
+        public string Username { get; set; } = string.Empty;
 
         [BindProperty]
         public int Age { get; set; }
 
         [BindProperty]
-        public string Gender { get; set; }
+        public string Gender { get; set; } = string.Empty;
 
         [BindProperty]
-        public string Department { get; set; }
+        public string Department { get; set; } = string.Empty;
 
-        [BindProperty]
-        public string Comments { get; set; }
+        [BindProperty] 
+        public string Comments { get; set; } = string.Empty;
 
         [BindProperty]
         public bool Subscribe { get; set; }

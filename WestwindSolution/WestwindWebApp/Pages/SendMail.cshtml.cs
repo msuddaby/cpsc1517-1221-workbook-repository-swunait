@@ -23,22 +23,22 @@ namespace WestwindWebApp.Pages
         }
 
         [BindProperty]
-        public string FeedbackMessage { get; set; }
+        public string FeedbackMessage { get; set; } = string.Empty;
 
         [BindProperty]
-        public string MailUsername { get; set; }
+        public string MailUsername { get; set; } = string.Empty;
 
         [BindProperty]
-        public string MailAppPassword { get; set; }
+        public string MailAppPassword { get; set; } = string.Empty;
 
         [BindProperty]
-        public string MailToAddress { get; set; }
+        public string MailToAddress { get; set; } = string.Empty;
 
         [BindProperty]
-        public string MailSubject { get; set; }
+        public string MailSubject { get; set; } = string.Empty;
 
         [BindProperty]
-        public string MailMessage { get; set; }
+        public string MailMessage { get; set; } = string.Empty;
 
         public void OnPostSendMail()
         {
