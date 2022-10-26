@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WestwindSystem.Entities
 {
@@ -16,7 +11,7 @@ namespace WestwindSystem.Entities
         public int Id { get; set; }
         [Required(ErrorMessage = "CategoryName is required")]
         [MaxLength(15,ErrorMessage = "CategoryName cannot contain more than 15 characters")]
-        public string CategoryName { get; set; } = String.Empty;
+        public string CategoryName { get; set; } = null!;
         [Column(TypeName = "ntext")]
         public string? Description { get; set; }
         [Column(TypeName = "varbinary")]
