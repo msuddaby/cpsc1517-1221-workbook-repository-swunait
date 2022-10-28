@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WestwindSystem.Entities
 {
-    [Table(name:"Categories")]
+    [Table("Categories")]
     public class Category
     {
         [Key]
