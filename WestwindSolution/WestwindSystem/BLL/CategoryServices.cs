@@ -17,7 +17,7 @@ namespace WestwindSystem.BLL
         // Step 3: Define methods to query and save instances of the entity
         public List<Category> List()
         {
-            IEnumerable<Category> query = _dbContext
+            var query = _dbContext
                 .Categories
                 .OrderBy(item => item.CategoryName);
             return query.ToList();
