@@ -11,12 +11,12 @@ namespace WestwindSystem.BLL
 {
     public class ProductServices
     {
-        private readonly WestwindContext _dbContext;
+        //private readonly WestwindContext _dbContext;
 
-        public List<Product> FindProductsByCategoryId(int categoryId)
-        {
-            var query = _dbContext.Products.Where(item => item.CategoryId == categoryId);
-            return query.ToList();
-        }
+        //public List<Product> FindProductsByCategoryId(int categoryId)
+        //{
+        //    var query = _dbContext.Products.Where(item => item.CategoryId == categoryId);
+        //    return query.ToList();
+        //}
     }
 }
