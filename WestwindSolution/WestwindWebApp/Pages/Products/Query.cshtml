@@ -1,13 +1,20 @@
-﻿@page
+﻿@page "{currentSelectedCategoryId?}"
 @model WestwindWebApp.Pages.Products.QueryModel
 @{
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.FeedbackMessage)) 
+{
+    <div class="alert alert-info">
+        @Model.FeedbackMessage
+    </div>
 }
 
 <form method="post">
     <div class="mb-3">
 
         <label asp-for="SelectedCategoryId">Category</label>
-        <select asp-for="SelectedCategoryId"
+       @* <select asp-for="SelectedCategoryId"
                 class="form-select" 
                 aria-label="Category">
             <option selected >--- select a category ---</option>            
@@ -15,6 +22,15 @@
             {
                 <option value="@currentCategory.Id">@currentCategory.CategoryName</option>
             }
+        </select>*@
+        <select 
+            asp-for="SelectedCategoryId"
+            asp-items="@Model.CategorySelectionList">
+            <option selected>--- select a category ---</option>
         </select>
     </div>
+    <button type="submit" asp-page-handler="SearchByCategory" class="btn btn-primary">Search by Category</button>
+    <button type="submit" asp-page-handler="SearchByProductName" class="btn btn-primary">Search by Product Name</button>
+    <button type="submit" asp-page-handler="ClearForm" class="btn btn-light">Clear</button>
+
 </form>

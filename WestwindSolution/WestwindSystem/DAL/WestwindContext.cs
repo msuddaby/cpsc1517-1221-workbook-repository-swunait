@@ -14,5 +14,7 @@ namespace WestwindSystem.DAL
 
         public DbSet<Category> Categories => Set<Category>();
 
+        public DbSet<Product> Products => Set<Product>();
+
     }
 }
