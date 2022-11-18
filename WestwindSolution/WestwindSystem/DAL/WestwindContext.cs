@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WestwindSystem.Entities;
-using WestWindSystem.Entities;
 
 namespace WestwindSystem.DAL
 {

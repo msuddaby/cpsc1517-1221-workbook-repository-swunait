@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace WestWindSystem.Entities;
+namespace WestwindSystem.Entities;
 
 [Index("CompanyName", Name = "CompanyName")]
 [Index("AddressId", Name = "UX_Suppliers_AddressID", IsUnique = true)]
