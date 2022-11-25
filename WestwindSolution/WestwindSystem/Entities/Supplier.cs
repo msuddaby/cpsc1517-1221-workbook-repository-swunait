@@ -34,4 +34,13 @@ public partial class Supplier
 
     [StringLength(24)]
     public string? Fax { get; set; }
+
+    [NotMapped]
+    public string ListItemText
+    {
+        get
+        {
+            return $"{CompanyName} - {ContactName}";
+        }
+    }
 }

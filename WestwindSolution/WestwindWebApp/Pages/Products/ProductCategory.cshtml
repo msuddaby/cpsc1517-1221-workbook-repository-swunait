@@ -52,6 +52,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Product Name</th>
+                    <th>Supplier</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -61,6 +62,21 @@
                     <tr>
                         <td>@currentProduct.Id</td>
                         <td>@currentProduct.ProductName</td>
+                        <td>
+                            <select>
+                                @foreach(var item in Model.SupplierSelectList)
+                                {
+                                    if (int.Parse(item.Value) == currentProduct.SupplierId) 
+                                    {
+                                        <option value="@item.Value" selected>@item.Text</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Value">@item.Text</option>
+                                    }
+                                }
+                            </select>
+                        </td>
                         <td><a href="/Products/ProductCrud/@currentProduct.Id">edit</a></td>
                     </tr>
                 }
