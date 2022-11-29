@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,5 +36,18 @@ namespace WestwindSystem.BLL
             return query.ToList();
         }
 
+        public List<Territory> List(
+            int pageNumber,
+            int pageSize,
+            out int totalCount)
+        {
+            var query = _dbContext.Territories.OrderBy(x => x.TerritoryDescription).Include(x => x.Region);
+            totalCount = query.Count();
+            int skipRows = (pageNumber - 1) * pageSize;
+
+            return query.Skip(skipRows).Take(pageSize).ToList();
+               
+           /* return query.ToList();*/
+        }
     }
 }
